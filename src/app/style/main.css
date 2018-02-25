@@ -1,0 +1,95 @@
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 500px) { 
+
+	body{
+		background-image: url("../images/background_seciton1_moile.jpg");
+	    background-repeat: no-repeat;
+	    
+	}
+
+	#section2Background{
+		background-image: url("../images/new_york_mobile.jpg");
+	    background-repeat: no-repeat;
+	    
+	}
+
+
+ }
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+
+	body{
+		background-image: url("../images/background_seciton1.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 650px;
+	}
+
+	#section2Background{
+		background-image: url("../images/new_york.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 400px;
+	}
+
+ }
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+
+	body{
+		background-image: url("../images/background_seciton1.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 650px;
+	}
+
+	#section2Background{
+		background-image: url("../images/new_york.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 400px;
+	}
+
+}
+
+
+
+#welcomeMessage{
+	color: white;
+	margin-top: 15%;
+    margin-left: 30%;
+}
+
+.navbar{
+	background-color: #1F2124 ;
+	opacity: 0.7;
+	height: 100px;	
+}
+
+.navbar a{
+	color: #FFFFFF;
+}
+
+.navbar a:hover{
+	color: #4AA2D1;
+}
+
+
+#section1{
+	height: 550px;
+	
+}
+
+#section2{
+	background-color: #262B2F;
+
+}
+
+#section2 h4{
+	padding-top: 25px;
+	color: white;
+	margin-left: 42%;
+	margin-bottom: 25px;
+}
+
+#section2Background{
+	height: 500px;	
+}

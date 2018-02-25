@@ -1,0 +1,124 @@
+
+@media (min-width: 400px) { 
+	#section1{
+		background-image: url("images/background_seciton1_moile.jpg");
+	    background-repeat: no-repeat;
+	    
+	}
+	#section2Background{
+		background-image: url("images/new_york_mobile.jpg");
+		background-repeat: no-repeat;
+		
+	    
+	}
+ }
+
+@media (min-width: 768px) { 
+	#section1{  
+		background-image: url("images/background_seciton1.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 650px;
+        margin-top: -100px;
+	}
+	#section2Background{
+		background-image: url("images/new_york.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 400px;
+	}
+ }
+
+@media (min-width: 992px) { 
+	#section1{
+		background-image: url("images/background_seciton1.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 650px;
+	}
+	#section2Background{
+		background-image: url("images/new_york.jpg");
+	    background-repeat: no-repeat;
+	    background-size: 100% 400px;
+	}
+}
+
+#welcomeMessage{
+	color: white;
+	margin-top: 20%;
+    margin-left: 30%;
+}
+
+.navbar{
+	background-color: #1F2124 ;
+	opacity: 0.7;
+	height: 100px;	
+	z-index: 1;
+}
+
+.navbar a{
+	color: #FFFFFF;
+}
+
+.navbar a:hover{
+	color: #4AA2D1;
+}
+
+
+#section1{
+	height: 550px;
+	
+}
+
+#section2{
+	background-color: #262B2F;
+
+}
+
+#section2 h4{
+	padding-top: 25px;
+	color: white;
+	margin-left: 42%;
+	margin-bottom: 25px;
+}
+
+#section2Background{
+	height: 600px;	
+}
+
+
+.info1{
+	font-size: 17px;
+	font-weight: 500;
+	height:400px; 
+	background-color: #FFFFFF; 
+	opacity: 0.65;
+	overflow-y:scroll;
+}
+
+.info2{
+	height:400px; 	
+}
+
+.info3{
+	color: white;
+	height:400px; 
+	background-color: #222127 ; 
+	opacity: 0.65;
+	overflow-y:scroll;
+}
+
+.dayInfo{	
+	height: 80px;
+	padding-top: 15px;
+}
+
+.dayInfo:hover{
+	background-color: #222127 ;
+	opacity: 0.65;
+}
+.dayInfo:hover span{
+	color: white;
+}
+
+
+hr{
+	border-top: 1px solid white;
+}

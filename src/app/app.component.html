@@ -1,20 +1,129 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+    <nav class="navbar navbar-expand-lg ">
+    <div class="container">
+      <a class="navbar-brand" href="#">Forecast</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="nav navbar-nav " style="margin-left: 80%;">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#CityWheather">CityWheather</a>
+          </li> 
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+
+    <div class="row" id="section1">
+        <div class="col-md-12">    
+            <h4 id="welcomeMessage">Welcome to our website for wheather forecast</h4>    
+        </div>
+    </div>
+
+    <div class="row" id="section2">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                <a name="CityWheather"></a>
+                    <h4>City Weather</h4> 
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 offset-md-1" id="section2Background">
+
+                <div class="row">                    
+                    <div class="col-md-3 info1">
+                        <div class="row dayInfo" *ngFor="let weather of weatherData"  
+                        style="color:#262b2f;" (click)="getDayInfo(weather.day)"> 
+
+                            <div class="col-6" style="padding-left: 30px;">
+                                <span>{{ weather.weather }}</span>
+                                <br>
+                                <span>{{ weather.temp }} <i class="wi wi-celsius"></i></span>                                    
+                            </div>  
+                            <div class="col-6" style="padding-top: 24px;">
+                                <span>{{ weather.day | date:"MM.dd.yyyy" }}</span>                                    
+                            </div> 
+                            <br>
+                            <hr>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 info2">
+                        <div class="row">
+                            <div class="col-md-5 offset-md-7" style="color:white; margin-top:20px; text-align:right;">
+                                <h3>New York City</h3>
+                                <p>{{ apiData.city.name }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 offset-md-2" style="font-size:18px; font-weight:500; color:white; margin-top:20px; text-align:right;">
+                                <p>Weather: <strong>{{ weatherHours[0].weather[0].description }} </strong></p>                                
+                                <p>Minimal temperature: <strong> {{ weatherHours[0].main.temp_min }} <i class="wi wi-celsius"></i> </strong></p>                                
+                                <p>Pressure: <strong>{{ weatherHours[0].main.pressure }}</strong></p>                                
+                                <p>Wind speed: <strong>{{ weatherHours[0].wind.speed }}</strong></p>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:20px; color:white;">
+                            <div class="col-md-4">
+                                <h3>{{ weatherHours[0].dt_txt.split(" ")[1] }}</h3> 
+                                <h3>{{ weatherHours[0].dt_txt.split(" ")[0] | date:"MM.dd.yyyy" }}</h3>                                
+                            </div>
+                            <div class="col-md-4 offset-md-4">
+                                <br>
+                                <span style="font-size:38px; float:right;">{{ weatherHours[0].main.temp_max }} <i class="wi wi-celsius "></i> </span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 info3" style="padding:20px;">  
+                            <h1 class="text-center" *ngIf=" weatherHours[0].weather[0].main  == 'Rain'"><i class="wi wi-rain"></i></h1>   
+                            <h1 class="text-center" *ngIf=" weatherHours[0].weather[0].main  == 'Clouds'"><i class="wi wi-cloud"></i></h1> 
+                            <h1 class="text-center" *ngIf=" weatherHours[0].weather[0].main  == 'Clear'"><i class="wi wi-night-clear"></i></h1> 
+                            <h1 class="text-center" *ngIf=" weatherHours[0].weather[0].main  == 'Sunny'"><i class="wi wi-day-sunny"></i></h1> 
+                            <p class="text-center">{{ weatherHours[0].weather[0].main }}</p>                       
+                            <hr>
+                            <div class="row" *ngFor="let weather of weatherHours" >
+                                <div class="col-md-12"  >
+                                        
+                                    <span style="float:left;">{{ weather.dt_txt.split(" ")[1] }}</span>
+                                    <span style="float:right;">{{ weather.main.temp_max }} <i class="wi wi-celsius"></i></span>  
+                                    
+                                    <hr style="margin-top:25px;">                                                                                        
+                                </div> 
+                            </div>
+                            
+
+                    </div>
+                    
+
+
+                </div>
+
+                    
+                </div>
+            </div>
+            
+
+
+
+        </div>
+
+    </div>
+  
+  
+
+
+
+</div>
+    
